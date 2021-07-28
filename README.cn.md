@@ -407,7 +407,7 @@ carbon.Parse("2020-08-05 13:14:15").DiffInSeconds(carbon.Parse("2020-08-05 13:14
 // 相差多少秒（绝对值）
 carbon.Parse("2020-08-05 13:14:15").DiffInSecondsWithAbs(carbon.Parse("2020-08-05 13:14:14")) // 1
 
-// 对人类友好的可读格式时间差(需要先把 `translation` 目录复制到项目目录下)
+// 对人类友好的可读格式时间差
 carbon.Parse("2020-08-05 13:14:15").DiffForHumans()) // just now
 carbon.Parse("2019-08-05 13:14:15").DiffForHumans() // 1 year ago
 carbon.Parse("2018-08-05 13:14:15").DiffForHumans() // 2 years ago
@@ -750,12 +750,12 @@ carbon.SetTimezone(carbon.Tokyo).Offset() // 32400
 carbon.Now().Locale() // en
 carbon.Now().SetLocale("zh-CN").Locale() // zh-CN
 
-// 获取当前星座(需要先把 `translation` 目录复制到项目目录下)
+// 获取当前星座
 carbon.Now().Constellation() // Leo
 carbon.Now().SetLocale("en").Constellation() // Leo
 carbon.Now().SetLocale("zh-CN").Constellation() // 狮子座
 
-// 获取当前季节(需要先把 `translation` 目录复制到项目目录下)
+// 获取当前季节
 carbon.Now().Season() // Summer
 carbon.Now().SetLocale("en").Season() // Summer
 carbon.Now().SetLocale("zh-CN").Season() // 夏季

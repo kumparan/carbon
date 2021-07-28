@@ -182,12 +182,18 @@ func (c Carbon) DiffForHumans(carbon ...Carbon) string {
 	}
 	translation := c.Lang.translate(unit, diff)
 	if c.Lt(end) && len(carbon) == 0 {
+		if unit == "day" && diff == 1 {
+			return c.Lang.resources["yesterday"]
+		}
 		return strings.Replace(c.Lang.resources["ago"], "%s", translation, 1)
 	}
 	if c.Lt(end) && len(carbon) == 1 {
 		return strings.Replace(c.Lang.resources["before"], "%s", translation, 1)
 	}
 	if c.Gt(end) && len(carbon) == 0 {
+		if unit == "day" && diff == 1 {
+			return c.Lang.resources["tomorrow"]
+		}
 		return strings.Replace(c.Lang.resources["from_now"], "%s", translation, 1)
 	}
 	if c.Gt(end) && len(carbon) == 1 {

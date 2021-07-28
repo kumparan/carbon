@@ -26,8 +26,8 @@ var Translations = map[string]map[string]string{
 	},
 	"id": {
 		"seasons":        "Semi|Panas|Gugur|Dingin",
-		"months":         "Januari|Pebruari|Maret|April|Mei|Juni|Juli|Agustus|September|Oktober|November|Desember",
-		"months_short":   "Jan|Peb|Mar|Apr|Mei|Jun|Jul|Agu|Sep|Okt|Nov|Des",
+		"months":         "Januari|Februari|Maret|April|Mei|Juni|Juli|Agustus|September|Oktober|November|Desember",
+		"months_short":   "Jan|Feb|Mar|Apr|Mei|Jun|Jul|Agu|Sep|Okt|Nov|Des",
 		"weeks":          "Minggu|Senin|Selasa|Rabu|Kamis|Jumat|Sabtu",
 		"weeks_short":    "Min|Sen|Sel|Rab|Kam|Jum|Sab",
 		"constellations": "Aries|Taurus|Gemini|Cancer|Leo|Virgo|Libra|Scorpio|Sagittarius|Capricorn|Aquarius|Pisces",

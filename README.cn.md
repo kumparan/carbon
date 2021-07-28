@@ -1001,14 +1001,15 @@ fmt.Printf("%+v", *person)
 ```
 
 ##### 国际化支持
-> 需要使用多语言时，请先把 `lang` 目录复制到项目目录下
+> 如果需要使用国际化支持，请参考翻译包
 
 目前支持的语言有
-* [简体中文(zh-CN)](translation/zh-CN.json "简体中文")
-* [繁体中文(zh-TW)](translation/zh-TW.json "繁体中文")
-* [英语(en)](translation/en.json "英语")
-* [日语(jp)](translation/jp.json "日语")
-* [韩语(kr)](translation/kr.json "韩语")
+* 简体中文(zh-CN)
+* 繁体中文(zh-TW)
+* 英语(en)
+* 印度尼西亚语(id)
+* 日语(jp)
+* 韩语(kr)
 
 目前支持的方法有
 * `DiffForHumans()`：输出对人类友好的可读格式时间差
@@ -1035,23 +1036,6 @@ c.Now().AddHours(1).ToWeekString() // 星期二
 c.Now().AddHours(1).ToShortWeekString() // 周二
 c.Now().AddHours(1).Constellation() // 狮子座
 c.Now().AddHours(1).Season() // 夏季
-```
-###### 设置目录
-```go
-lang := NewLanguage()
-if err := lang.SetDir("translation");err != nil {
-	// 错误处理
-    log.Fatal(err)
-}
-
-c := carbon.SetLanguage(lang)
-Now().AddHours(1).DiffForHumans() // 1 hour from now
-Now().AddHours(1).ToMonthString() // August
-Now().AddHours(1).ToShortMonthString() // Aug
-Now().AddHours(1).ToWeekString() // Tuesday
-Now().AddHours(1).ToShortWeekString() // Tue
-Now().AddHours(1).Constellation() // Leo
-Now().AddHours(1).Season() // Summer
 ```
 
 ###### 重写部分翻译资源(其余仍然按照指定的 `locale` 文件内容翻译)
@@ -1101,6 +1085,8 @@ resources := map[string]string {
     "from_now":"in %s",
     "before":"%s before",
     "after":"%s after",
+    "yesterday": "yesterday",
+    "tomorrow": "tomorrow",
 }
 lang.SetResources(resources)
 

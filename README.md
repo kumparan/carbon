@@ -991,14 +991,16 @@ fmt.Printf("%+v", *person)
 ```
 
 ##### I18n
-> If you need to use i18n, please copy Lang directory to project directory first
+> If you need to use i18n, please refer to the translation package
 
 The following languages are supported
-* [simplified Chinese(zh-CN)](translation/zh-CN.json "simplified Chinese")
-* [traditional Chinese(zh-TW)](translation/zh-TW.json "traditional Chinese")
-* [English(en)](translation/en.json "English")
-* [Japanese(jp)](translation/jp.json "Japanese")
-* [Korean(kr)](translation/kr.json "Korean")
+* Simplified Chinese(zh-CN)
+* Traditional Chinese(zh-TW)
+* English(en)
+* Indonesian(id)
+* Japanese(jp)
+* Korean(kr)
+
 
 The following methods are supported
 * `DiffForHumans()`：to string difference in human friendly readable format
@@ -1027,23 +1029,6 @@ c.Now().AddHours(1).Constellation() // 狮子座
 c.Now().AddHours(1).Season() // 夏季
 ```
 
-###### Set dir
-```go
-lang := NewLanguage()
-if err := lang.SetDir("translation");err != nil {
-    // Error handle...
-    log.Fatal(err)
-}
-
-c := carbon.SetLanguage(lang)
-Now().AddHours(1).DiffForHumans() // 1 hour from now
-Now().AddHours(1).ToMonthString() // August
-Now().AddHours(1).ToShortMonthString() // Aug
-Now().AddHours(1).ToWeekString() // Tuesday
-Now().AddHours(1).ToShortWeekString() // Tue
-Now().AddHours(1).Constellation() // Leo
-Now().AddHours(1).Season() // Summer
-```
 
 ###### Set some resources(the rest still translate from the given locale)
 ```go
@@ -1092,6 +1077,8 @@ resources := map[string]string {
     "from_now":"in %s",
     "before":"%s before",
     "after":"%s after",
+    "yesterday": "yesterday",
+    "tomorrow": "tomorrow",
 }
 lang.SetResources(resources)
 

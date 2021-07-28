@@ -37,6 +37,7 @@ func (c Carbon) SetLocale(locale string) Carbon {
 	if c.IsInvalid() {
 		return c
 	}
+
 	c.Error = c.Lang.SetLocale(locale)
 	return c
 }

@@ -407,7 +407,7 @@ carbon.Parse("2020-08-05 13:14:15").DiffInSeconds(carbon.Parse("2020-08-05 13:14
 // 相差多少秒（绝对值）
 carbon.Parse("2020-08-05 13:14:15").DiffInSecondsWithAbs(carbon.Parse("2020-08-05 13:14:14")) // 1
 
-// 对人类友好的可读格式时间差(需要先把 `lang` 目录复制到项目目录下)
+// 对人类友好的可读格式时间差(需要先把 `translation` 目录复制到项目目录下)
 carbon.Parse("2020-08-05 13:14:15").DiffForHumans()) // just now
 carbon.Parse("2019-08-05 13:14:15").DiffForHumans() // 1 year ago
 carbon.Parse("2018-08-05 13:14:15").DiffForHumans() // 2 years ago
@@ -750,12 +750,12 @@ carbon.SetTimezone(carbon.Tokyo).Offset() // 32400
 carbon.Now().Locale() // en
 carbon.Now().SetLocale("zh-CN").Locale() // zh-CN
 
-// 获取当前星座(需要先把 `lang` 目录复制到项目目录下)
+// 获取当前星座(需要先把 `translation` 目录复制到项目目录下)
 carbon.Now().Constellation() // Leo
 carbon.Now().SetLocale("en").Constellation() // Leo
 carbon.Now().SetLocale("zh-CN").Constellation() // 狮子座
 
-// 获取当前季节(需要先把 `lang` 目录复制到项目目录下)
+// 获取当前季节(需要先把 `translation` 目录复制到项目目录下)
 carbon.Now().Season() // Summer
 carbon.Now().SetLocale("en").Season() // Summer
 carbon.Now().SetLocale("zh-CN").Season() // 夏季
@@ -1004,11 +1004,11 @@ fmt.Printf("%+v", *person)
 > 需要使用多语言时，请先把 `lang` 目录复制到项目目录下
 
 目前支持的语言有
-* [简体中文(zh-CN)](./lang/zh-CN.json "简体中文")
-* [繁体中文(zh-TW)](./lang/zh-TW.json "繁体中文")
-* [英语(en)](./lang/en.json "英语")
-* [日语(jp)](./lang/jp.json "日语")
-* [韩语(kr)](./lang/kr.json "韩语")
+* [简体中文(zh-CN)](translation/zh-CN.json "简体中文")
+* [繁体中文(zh-TW)](translation/zh-TW.json "繁体中文")
+* [英语(en)](translation/en.json "英语")
+* [日语(jp)](translation/jp.json "日语")
+* [韩语(kr)](translation/kr.json "韩语")
 
 目前支持的方法有
 * `DiffForHumans()`：输出对人类友好的可读格式时间差
@@ -1039,7 +1039,7 @@ c.Now().AddHours(1).Season() // 夏季
 ###### 设置目录
 ```go
 lang := NewLanguage()
-if err := lang.SetDir("lang");err != nil {
+if err := lang.SetDir("translation");err != nil {
 	// 错误处理
     log.Fatal(err)
 }

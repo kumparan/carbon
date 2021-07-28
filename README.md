@@ -994,11 +994,11 @@ fmt.Printf("%+v", *person)
 > If you need to use i18n, please copy Lang directory to project directory first
 
 The following languages are supported
-* [simplified Chinese(zh-CN)](./lang/zh-CN.json "simplified Chinese")
-* [traditional Chinese(zh-TW)](./lang/zh-TW.json "traditional Chinese")
-* [English(en)](./lang/en.json "English")
-* [Japanese(jp)](./lang/jp.json "Japanese")
-* [Korean(kr)](./lang/kr.json "Korean")
+* [simplified Chinese(zh-CN)](translation/zh-CN.json "simplified Chinese")
+* [traditional Chinese(zh-TW)](translation/zh-TW.json "traditional Chinese")
+* [English(en)](translation/en.json "English")
+* [Japanese(jp)](translation/jp.json "Japanese")
+* [Korean(kr)](translation/kr.json "Korean")
 
 The following methods are supported
 * `DiffForHumans()`：to string difference in human friendly readable format
@@ -1030,7 +1030,7 @@ c.Now().AddHours(1).Season() // 夏季
 ###### Set dir
 ```go
 lang := NewLanguage()
-if err := lang.SetDir("lang");err != nil {
+if err := lang.SetDir("translation");err != nil {
     // Error handle...
     log.Fatal(err)
 }

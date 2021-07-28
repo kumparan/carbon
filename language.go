@@ -1,23 +1,19 @@
 package carbon
 
 import (
-	"encoding/json"
-	"io/ioutil"
-	"os"
 	"strconv"
 	"strings"
+
+	"github.com/golang-module/carbon/translation"
 )
 
 var (
-	// 默认目录
-	defaultDir = "./lang"
 	// 默认区域
 	defaultLocale = "en"
 )
 
 // Language 定义 Language 结构体
 type Language struct {
-	dir       string            // 目录
 	locale    string            // 区域
 	resources map[string]string // 资源
 }
@@ -25,7 +21,6 @@ type Language struct {
 // NewLanguage 初始化 Language 结构体
 func NewLanguage() *Language {
 	return &Language{
-		dir:       defaultDir,
 		locale:    defaultLocale,
 		resources: make(map[string]string),
 	}
@@ -36,25 +31,14 @@ func (lang *Language) SetLocale(locale string) error {
 	if len(lang.resources) != 0 {
 		return nil
 	}
-	fileName := lang.dir + string(os.PathSeparator) + locale + ".json"
-	bytes, err := ioutil.ReadFile(fileName)
-	if err != nil {
-		return invalidLocaleError(locale, lang.dir)
-	}
-	if err := json.Unmarshal(bytes, &lang.resources); err != nil {
-		return invalidJsonFileError(fileName)
-	}
-	lang.locale = locale
-	return nil
-}
 
-// SetDir 设置目录
-func (lang *Language) SetDir(dir string) error {
-	fi, err := os.Stat(dir)
-	if err != nil || !fi.IsDir() {
-		return invalidDirError(dir)
+	resources, ok := translation.Translations[locale]
+	if !ok {
+		return invalidLocaleError(locale)
 	}
-	lang.dir = dir
+
+	lang.resources = resources
+	lang.locale = locale
 	return nil
 }
 

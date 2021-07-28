@@ -10,6 +10,8 @@ package carbon
 
 import (
 	"time"
+
+	"github.com/markbates/pkger"
 )
 
 // 时区常量
@@ -140,6 +142,10 @@ const (
 	ShortDateFormat     = "20060102"
 	ShortTimeFormat     = "150405"
 )
+
+func init() {
+	pkger.Include("/translation")
+}
 
 // Carbon 定义 Carbon 结构体
 type Carbon struct {

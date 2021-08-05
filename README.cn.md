@@ -1,8 +1,8 @@
 # Carbon  #
-[![Build Status](https://github.com/golang-module/carbon/workflows/Go/badge.svg)](https://github.com/golang-module/carbon/actions)
-[![Go Report Card](https://goreportcard.com/badge/github.com/golang-module/carbon)](https://goreportcard.com/report/github.com/golang-module/carbon)
-[![codecov](https://codecov.io/gh/golang-module/carbon/branch/master/graph/badge.svg)](https://codecov.io/gh/golang-module/carbon)
-[![Go doc](https://img.shields.io/badge/go.dev-reference-brightgreen?logo=go&logoColor=white&style=flat)](https://pkg.go.dev/github.com/golang-module/carbon)
+[![Build Status](https://github.com/kumparan/carbon/workflows/Go/badge.svg)](https://github.com/kumparan/carbon/actions)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kumparan/carbon)](https://goreportcard.com/report/github.com/kumparan/carbon)
+[![codecov](https://codecov.io/gh/kumparan/carbon/branch/master/graph/badge.svg)](https://codecov.io/gh/kumparan/carbon)
+[![Go doc](https://img.shields.io/badge/go.dev-reference-brightgreen?logo=go&logoColor=white&style=flat)](https://pkg.go.dev/github.com/kumparan/carbon)
 
 中文 | [English](README.md)
 
@@ -10,17 +10,17 @@ carbon 是一个轻量级、语义化、对开发者友好的 golang 时间处�
 
 如果您觉得不错，请给个 star 吧
 
-github:[github.com/golang-module/carbon](https://github.com/golang-module/carbon "github.com/golang-module/carbon")
+github:[github.com/kumparan/carbon](https://github.com/kumparan/carbon "github.com/kumparan/carbon")
 
 gitee:[gitee.com/go-package/carbon](https://gitee.com/go-package/carbon "gitee.com/go-package/carbon")
 
 #### 安装使用
 ```go
 // 使用 github 库
-go get -u github.com/golang-module/carbon
+go get -u github.com/kumparan/carbon
 
 import (
-    "github.com/golang-module/carbon"
+    "github.com/kumparan/carbon"
 )
 
 // 使用 gitee 库
@@ -1189,7 +1189,7 @@ invalid timezone "xxx", please see the file "$GOROOT/lib/time/zoneinfo.zip" for 
 * [iamkun/dayjs](https://github.com/iamkun/dayjs)
 
 #### 相关链接
-* [更新日志](https://github.com/golang-module/carbon/wiki/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97)
+* [更新日志](https://github.com/kumparan/carbon/wiki/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97)
 * [思否](https://segmentfault.com/t/go-carbon)
 * [开源中国](https://www.oschina.net/p/go-carbon)
 * [掘金](https://juejin.cn/column/6988159448736858120)

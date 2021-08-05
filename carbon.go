@@ -1,6 +1,6 @@
 // @Title carbon
 // @Description A simple, semantic and developer-friendly golang package for datetime
-// @Page github.com/golang-module/carbon
+// @Page github.com/kumparan/carbon
 // @Version v1.4.5
 // @Author gouguoyin
 // @Blog www.gouguoyin.cn

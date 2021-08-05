@@ -1,4 +1,4 @@
-module github.com/golang-module/carbon
+module github.com/kumparan/carbon
 
 go 1.14
 

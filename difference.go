@@ -1,6 +1,9 @@
 package carbon
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 // DiffInYears 相差多少年
 func (c Carbon) DiffInYears(carbon ...Carbon) int64 {
@@ -180,6 +183,50 @@ func (c Carbon) DiffForHumans(carbon ...Carbon) string {
 		diff = 0
 		return c.Lang.translate(unit, diff)
 	}
+	translation := c.Lang.translate(unit, diff)
+	if c.Lt(end) && len(carbon) == 0 {
+		if unit == "day" && diff == 1 {
+			return c.Lang.resources["yesterday"]
+		}
+		return strings.Replace(c.Lang.resources["ago"], "%s", translation, 1)
+	}
+	if c.Lt(end) && len(carbon) == 1 {
+		return strings.Replace(c.Lang.resources["before"], "%s", translation, 1)
+	}
+	if c.Gt(end) && len(carbon) == 0 {
+		if unit == "day" && diff == 1 {
+			return c.Lang.resources["tomorrow"]
+		}
+		return strings.Replace(c.Lang.resources["from_now"], "%s", translation, 1)
+	}
+	if c.Gt(end) && len(carbon) == 1 {
+		return strings.Replace(c.Lang.resources["after"], "%s", translation, 1)
+	}
+	return translation
+}
+
+// DiffDaysForHumans Get Different Days for humans
+func (c Carbon) DiffDaysForHumans(carbon ...Carbon) string {
+	end := c.Now()
+	if len(carbon) == 1 {
+		end = carbon[0]
+	}
+	unit, diff := "", int64(0)
+
+	switch true {
+	case c.DiffInDaysWithAbs(end) > 0:
+		unit = "day"
+		diff = c.DiffInDaysWithAbs(end)
+		break
+	case c.DiffInSecondsWithAbs(end) == 0:
+		unit = "now"
+		diff = 0
+		return c.Lang.translate(unit, diff)
+	}
+
+
+	fmt.Println()
+
 	translation := c.Lang.translate(unit, diff)
 	if c.Lt(end) && len(carbon) == 0 {
 		if unit == "day" && diff == 1 {

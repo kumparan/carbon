@@ -1,10 +1,9 @@
 package carbon
 
 import (
+	"github.com/stretchr/testify/assert"
 	"strconv"
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 
 func TestCarbon_DiffInYears(t *testing.T) {
@@ -443,3 +442,28 @@ func TestCarbon_DiffForHumans2(t *testing.T) {
 		assert.Equal(test.expected, c1.SetLocale("zh-CN").DiffForHumans(c2), "Current test id is "+strconv.Itoa(test.id))
 	}
 }
+
+func TestCarbon_DiffDaysForHumansID(t *testing.T) {
+	assert := assert.New(t)
+	tests := []struct {
+		id       int    // 测试id
+		input    Carbon // 输入值
+		expected string // 期望值
+	}{
+		{1, Now(), "baru saja"},
+		{2, Now().AddDays(1), "besok"},
+		{3, Now().AddDays(2), "2 hari lagi"},
+		{4, Now().AddDays(3), "3 hari lagi"},
+		{5, Now().SubDays(1), "kemarin"},
+		{5, Now().SubDays(2), "2 hari yang lalu"},
+		{5, Now().SubDays(3), "3 hari yang lalu"},
+	}
+
+	for _, test := range tests {
+		c := test.input
+		c.SetLocale("id")
+		assert.Nil(c.Error)
+		assert.Equal(test.expected, c.DiffDaysForHumans(), "Current test id is "+strconv.Itoa(test.id))
+	}
+}
+

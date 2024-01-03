@@ -5,8 +5,8 @@ import "strings"
 // DiffInYears 相差多少年
 func (c Carbon) DiffInYears(carbon ...Carbon) int64 {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	return c.DiffInMonths(end) / MonthsPerYear
 }
@@ -14,8 +14,8 @@ func (c Carbon) DiffInYears(carbon ...Carbon) int64 {
 // DiffInYearsWithAbs 相差多少年(绝对值)
 func (c Carbon) DiffInYearsWithAbs(carbon ...Carbon) int64 {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	return getAbsValue(c.DiffInYears(end))
 }
@@ -23,8 +23,8 @@ func (c Carbon) DiffInYearsWithAbs(carbon ...Carbon) int64 {
 // DiffInMonths 相差多少月
 func (c Carbon) DiffInMonths(carbon ...Carbon) int64 {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	dy, dm, dd := end.Year()-c.Year(), end.Month()-c.Month(), end.Day()-c.Day()
 	if dd < 0 {
@@ -45,8 +45,8 @@ func (c Carbon) DiffInMonths(carbon ...Carbon) int64 {
 // DiffInMonthsWithAbs 相差多少月(绝对值)
 func (c Carbon) DiffInMonthsWithAbs(carbon ...Carbon) int64 {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	return getAbsValue(c.DiffInMonths(end))
 }
@@ -54,8 +54,8 @@ func (c Carbon) DiffInMonthsWithAbs(carbon ...Carbon) int64 {
 // DiffInWeeks 相差多少周
 func (c Carbon) DiffInWeeks(carbon ...Carbon) int64 {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	return c.DiffInDays(end) / DaysPerWeek
 }
@@ -63,8 +63,8 @@ func (c Carbon) DiffInWeeks(carbon ...Carbon) int64 {
 // DiffInWeeksWithAbs 相差多少周(绝对值)
 func (c Carbon) DiffInWeeksWithAbs(carbon ...Carbon) int64 {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	return getAbsValue(c.DiffInWeeks(end))
 }
@@ -72,8 +72,8 @@ func (c Carbon) DiffInWeeksWithAbs(carbon ...Carbon) int64 {
 // DiffInDays 相差多少天
 func (c Carbon) DiffInDays(carbon ...Carbon) int64 {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	return c.DiffInSeconds(end) / SecondsPerDay
 }
@@ -81,8 +81,8 @@ func (c Carbon) DiffInDays(carbon ...Carbon) int64 {
 // DiffInDaysWithAbs 相差多少天(绝对值)
 func (c Carbon) DiffInDaysWithAbs(carbon ...Carbon) int64 {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	return getAbsValue(c.DiffInDays(end))
 }
@@ -90,8 +90,8 @@ func (c Carbon) DiffInDaysWithAbs(carbon ...Carbon) int64 {
 // DiffInHours 相差多少小时
 func (c Carbon) DiffInHours(carbon ...Carbon) int64 {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	return c.DiffInSeconds(end) / SecondsPerHour
 }
@@ -99,8 +99,8 @@ func (c Carbon) DiffInHours(carbon ...Carbon) int64 {
 // DiffInHoursWithAbs 相差多少小时(绝对值)
 func (c Carbon) DiffInHoursWithAbs(carbon ...Carbon) int64 {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	return getAbsValue(c.DiffInHours(end))
 }
@@ -108,8 +108,8 @@ func (c Carbon) DiffInHoursWithAbs(carbon ...Carbon) int64 {
 // DiffInMinutes 相差多少分钟
 func (c Carbon) DiffInMinutes(carbon ...Carbon) int64 {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	return c.DiffInSeconds(end) / SecondsPerMinute
 }
@@ -117,8 +117,8 @@ func (c Carbon) DiffInMinutes(carbon ...Carbon) int64 {
 // DiffInMinutesWithAbs 相差多少分钟(绝对值)
 func (c Carbon) DiffInMinutesWithAbs(carbon ...Carbon) int64 {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	return getAbsValue(c.DiffInMinutes(end))
 }
@@ -126,8 +126,8 @@ func (c Carbon) DiffInMinutesWithAbs(carbon ...Carbon) int64 {
 // DiffInSeconds 相差多少秒
 func (c Carbon) DiffInSeconds(carbon ...Carbon) int64 {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	return end.ToTimestamp() - c.ToTimestamp()
 }
@@ -135,8 +135,8 @@ func (c Carbon) DiffInSeconds(carbon ...Carbon) int64 {
 // DiffInSecondsWithAbs 相差多少秒(绝对值)
 func (c Carbon) DiffInSecondsWithAbs(carbon ...Carbon) int64 {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	return getAbsValue(c.DiffInSeconds(end))
 }
@@ -144,31 +144,26 @@ func (c Carbon) DiffInSecondsWithAbs(carbon ...Carbon) int64 {
 // DiffForHumans 获取对人类友好的可读格式时间差，支持i18n
 func (c Carbon) DiffForHumans(carbon ...Carbon) string {
 	end := c.Now()
-	if len(carbon) == 1 {
-		end = carbon[0]
+	if len(carbon) > 0 {
+		end = carbon[len(carbon)-1]
 	}
 	unit, diff := "", int64(0)
 	switch true {
 	case c.DiffInYearsWithAbs(end) > 0:
 		unit = "year"
 		diff = c.DiffInYearsWithAbs(end)
-		break
 	case c.DiffInMonthsWithAbs(end) > 0:
 		unit = "month"
 		diff = c.DiffInMonthsWithAbs(end)
-		break
 	case c.DiffInWeeksWithAbs(end) > 0:
 		unit = "week"
 		diff = c.DiffInWeeksWithAbs(end)
-		break
 	case c.DiffInDaysWithAbs(end) > 0:
 		unit = "day"
 		diff = c.DiffInDaysWithAbs(end)
-		break
 	case c.DiffInHoursWithAbs(end) > 0:
 		unit = "hour"
 		diff = c.DiffInHoursWithAbs(end)
-		break
 	case c.DiffInMinutesWithAbs(end) > 0:
 		unit = "minute"
 		diff = c.DiffInMinutesWithAbs(end)

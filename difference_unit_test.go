@@ -495,25 +495,25 @@ func TestCarbon_DiffForHumans(t *testing.T) {
 		7: {Now().AddMonthsNoOverflow(10), "10 months from now"},
 		8: {Now().SubMonthsNoOverflow(10), "10 months ago"},
 
-		9: {Now().AddDays(1), "tomorrow"},
-		//10: {Now().SubDays(1), "yesterday"},
-		//11: {Now().AddDays(10), "1 week from now"},
-		//12: {Now().SubDays(10), "1 week ago"},
-		//
-		//13: {Now().AddHours(1), "1 hour from now"},
-		//14: {Now().SubHours(1), "1 hour ago"},
-		//15: {Now().AddHours(10), "10 hours from now"},
-		//16: {Now().SubHours(10), "10 hours ago"},
-		//
-		//17: {Now().AddMinutes(1), "1 minute from now"},
-		//18: {Now().SubMinutes(1), "1 minute ago"},
-		//19: {Now().AddMinutes(10), "10 minutes from now"},
-		//20: {Now().SubMinutes(10), "10 minutes ago"},
-		//
-		//21: {Now().AddSeconds(1), "1 second from now"},
-		//22: {Now().SubSeconds(1), "1 second ago"},
-		//23: {Now().AddSeconds(10), "10 seconds from now"},
-		//24: {Now().SubSeconds(10), "10 seconds ago"},
+		9:  {Now().AddDays(1), "tomorrow"},
+		10: {Now().SubDays(1), "yesterday"},
+		11: {Now().AddDays(10), "1 week from now"},
+		12: {Now().SubDays(10), "1 week ago"},
+
+		13: {Now().AddHours(1), "1 hour from now"},
+		14: {Now().SubHours(1), "1 hour ago"},
+		15: {Now().AddHours(10), "10 hours from now"},
+		16: {Now().SubHours(10), "10 hours ago"},
+
+		17: {Now().AddMinutes(1), "1 minute from now"},
+		18: {Now().SubMinutes(1), "1 minute ago"},
+		19: {Now().AddMinutes(10), "10 minutes from now"},
+		20: {Now().SubMinutes(10), "10 minutes ago"},
+
+		21: {Now().AddSeconds(1), "1 second from now"},
+		22: {Now().SubSeconds(1), "1 second ago"},
+		23: {Now().AddSeconds(10), "10 seconds from now"},
+		24: {Now().SubSeconds(10), "10 seconds ago"},
 	}
 
 	for index, test := range tests {

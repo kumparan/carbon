@@ -15,8 +15,8 @@ func TestLanguage_SetLocale(t *testing.T) {
 		locale   string
 		expected string
 	}{
-		0: {Now(), "en", "1 day after"},
-		1: {Tomorrow(), "zh-CN", "1 天后"},
+		0: {Now(), "en", "tomorrow"},
+		1: {Tomorrow(), "zh-CN", "明天"},
 	}
 
 	for index, test := range tests {

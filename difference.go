@@ -1,6 +1,7 @@
 package carbon
 
 import (
+	"fmt"
 	"math"
 	"strings"
 )
@@ -205,6 +206,8 @@ func (c Carbon) DiffForHumans(carbon ...Carbon) string {
 	if unit == "now" {
 		return translation
 	}
+	fmt.Println("COK", unit, value, c.lang.resources["yesterday"])
+	fmt.Println(c.Lt(end), len(carbon))
 	if c.Lt(end) && len(carbon) == 0 {
 		if unit == "day" && value == 1 {
 			return c.lang.resources["yesterday"]
@@ -212,6 +215,15 @@ func (c Carbon) DiffForHumans(carbon ...Carbon) string {
 		return strings.Replace(c.lang.resources["ago"], "%s", translation, 1)
 	}
 	if c.Lt(end) && len(carbon) > 0 {
+		if unit == "day" {
+			if value == 1 {
+				return c.lang.resources["yesterday"]
+			}
+			if value == -1 {
+				return c.lang.resources["tomorrow"]
+			}
+		}
+
 		return strings.Replace(c.lang.resources["before"], "%s", translation, 1)
 	}
 	if c.Gt(end) && len(carbon) == 0 {
@@ -220,6 +232,15 @@ func (c Carbon) DiffForHumans(carbon ...Carbon) string {
 		}
 		return strings.Replace(c.lang.resources["from_now"], "%s", translation, 1)
 	}
+	if unit == "day" {
+		if value == 1 {
+			return c.lang.resources["yesterday"]
+		}
+		if value == -1 {
+			return c.lang.resources["tomorrow"]
+		}
+	}
+
 	return strings.Replace(c.lang.resources["after"], "%s", translation, 1)
 }
 

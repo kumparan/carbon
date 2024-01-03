@@ -16,5 +16,7 @@
 	"ago": "%s前",
 	"from_now": "%s后",
 	"before": "%s前",
-	"after": "%s后"
+	"after": "%s后",
+	"yesterday": "昨天",
+	"tomorrow": "明天"
 }

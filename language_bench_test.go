@@ -18,19 +18,21 @@ func BenchmarkLanguage_SetLocale(b *testing.B) {
 func BenchmarkLanguage_SetResources(b *testing.B) {
 	l := NewLanguage()
 	resources := map[string]string{
-		"seasons":  "spring|summer|autumn|winter",
-		"year":     "1 yr|%d yrs",
-		"month":    "1 mo|%d mos",
-		"week":     "%dw",
-		"day":      "%dd",
-		"hour":     "%dh",
-		"minute":   "%dm",
-		"second":   "%ds",
-		"now":      "just now",
-		"ago":      "%s ago",
-		"from_now": "in %s",
-		"before":   "%s before",
-		"after":    "%s after",
+		"seasons":   "spring|summer|autumn|winter",
+		"year":      "1 yr|%d yrs",
+		"month":     "1 mo|%d mos",
+		"week":      "%dw",
+		"day":       "%dd",
+		"hour":      "%dh",
+		"minute":    "%dm",
+		"second":    "%ds",
+		"now":       "just now",
+		"ago":       "%s ago",
+		"from_now":  "in %s",
+		"before":    "%s before",
+		"after":     "%s after",
+		"yesterday": "yesterday",
+		"tomorrow":  "tomorrow",
 	}
 	for n := 0; n < b.N; n++ {
 		l.SetResources(resources)

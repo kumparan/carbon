@@ -31,19 +31,21 @@ func TestLanguage_SetResources1(t *testing.T) {
 
 	lang := NewLanguage()
 	resources := map[string]string{
-		"seasons":  "spring|summer|autumn|winter",
-		"year":     "1 yr|%d yrs",
-		"month":    "1 mo|%d mos",
-		"week":     "%dw",
-		"day":      "%dd",
-		"hour":     "%dh",
-		"minute":   "%dm",
-		"second":   "%ds",
-		"now":      "just now",
-		"ago":      "%s ago",
-		"from_now": "in %s",
-		"before":   "%s before",
-		"after":    "%s after",
+		"seasons":   "spring|summer|autumn|winter",
+		"year":      "1 yr|%d yrs",
+		"month":     "1 mo|%d mos",
+		"week":      "%dw",
+		"day":       "%dd",
+		"hour":      "%dh",
+		"minute":    "%dm",
+		"second":    "%ds",
+		"now":       "just now",
+		"ago":       "%s ago",
+		"from_now":  "in %s",
+		"before":    "%s before",
+		"after":     "%s after",
+		"yesterday": "yst",
+		"tomorrow":  "tmr",
 	}
 	lang.SetResources(resources)
 
@@ -63,8 +65,8 @@ func TestLanguage_SetResources1(t *testing.T) {
 		7: {"2020-08-05 13:14:15", "2021-06-05 13:14:15", "10 mos before"},
 		8: {"2020-08-05 13:14:15", "2019-10-05 13:14:15", "10 mos after"},
 
-		9:  {"2020-08-05 13:14:15", "2020-08-06 13:14:15", "1d before"},
-		10: {"2020-08-05 13:14:15", "2020-08-04 13:14:15", "1d after"},
+		9:  {"2020-08-05 13:14:15", "2020-08-06 13:14:15", "yst"},
+		10: {"2020-08-05 13:14:15", "2020-08-04 13:14:15", "tmr"},
 		11: {"2020-08-05 13:14:15", "2020-08-15 13:14:15", "1w before"},
 		12: {"2020-08-05 13:14:15", "2020-07-26 13:14:15", "1w after"},
 

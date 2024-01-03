@@ -1,7 +1,6 @@
 package carbon
 
 import (
-	"fmt"
 	"math"
 	"strings"
 )
@@ -206,8 +205,6 @@ func (c Carbon) DiffForHumans(carbon ...Carbon) string {
 	if unit == "now" {
 		return translation
 	}
-	fmt.Println("COK", unit, value, c.lang.resources["yesterday"])
-	fmt.Println(c.Lt(end), len(carbon))
 	if c.Lt(end) && len(carbon) == 0 {
 		if unit == "day" && value == 1 {
 			return c.lang.resources["yesterday"]

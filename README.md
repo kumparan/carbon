@@ -1513,6 +1513,8 @@ resources := map[string]string {
     "from_now": "in %s",
     "before": "%s before",
     "after": "%s after",
+	"yesterday": "yesterday",
+	"tomorrow": "tomorrow",
 }
 lang.SetResources(resources)
 

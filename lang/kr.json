@@ -16,5 +16,7 @@
 	"ago": "%s앞",
 	"from_now": "%s후",
 	"before": "%s전",
-	"after": "%s후"
+	"after": "%s후",
+	"yesterday": "어제",
+	"tomorrow": "내일"
 }

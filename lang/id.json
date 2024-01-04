@@ -16,5 +16,7 @@
 	"ago": "%s yang lalu",
 	"from_now": "%s dari sekarang",
 	"before": "%s sebelum",
-	"after": "%s sesudah"
+	"after": "%s lagi",
+	"yesterday": "kemarin",
+	"tomorrow": "besok"
 }

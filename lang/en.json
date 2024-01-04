@@ -16,5 +16,7 @@
 	"ago": "%s ago",
 	"from_now": "%s from now",
 	"before": "%s before",
-	"after": "%s after"
+	"after": "%s after",
+	"yesterday": "yesterday",
+	"tomorrow": "tomorrow"
 }
